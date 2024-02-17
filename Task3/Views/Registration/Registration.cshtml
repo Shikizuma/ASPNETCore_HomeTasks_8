@@ -1,0 +1,42 @@
+﻿@model RegistrationFormModel
+
+<h4>Реєстрація</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Registration">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class ="form-control" placeholder="Введіть ваше ім'я">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname"></label>
+                <input asp-for="Surname" class="form-control" placeholder="Введіть ваше призвище">
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Введіть ваш email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistrationTime"></label>
+                <div class="input-group date">
+                    <input asp-for="RegistrationTime" class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>           
+                </div>
+                <span asp-validation-for="RegistrationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="Subject" asp-items="ViewBag.Subjects"></select>
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <button  type="submit" class="btn btn-primary">Записатись на прийом</button>
+            </div>
+        </form>
+    </div>
+</div>
